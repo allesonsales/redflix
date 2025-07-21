@@ -1,0 +1,24 @@
+.input-arquivo {
+  display: none;
+}
+
+.enviar-arquivo {
+  background-color: var(--vermelho);
+  width: 100%;
+  padding: 1.2rem;
+  color: #fff;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.enviar-arquivo:hover {
+  background-color: var(--vermelho-hover);
+}
+
+.container-file {
+  display: flex;
+  flex-direction: column;
+}

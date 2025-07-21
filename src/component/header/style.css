@@ -1,0 +1,147 @@
+header {
+  position: fixed;
+  top: 0;
+  z-index: 21;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--cinza);
+}
+
+header a {
+  color: #fff;
+  transition: 0.5s;
+}
+
+header a:hover {
+  color: var(--vermelho);
+}
+
+header img {
+  width: 150px;
+  cursor: pointer;
+}
+
+header .left-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1rem;
+}
+
+.user button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+  transition: 0.5s;
+}
+
+.user button:hover {
+  color: var(--vermelho);
+}
+
+.user input {
+  background-color: transparent;
+  border: #fff solid 1px;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.user input:focus {
+  background-color: transparent;
+  border: var(--vermelho);
+}
+
+.user input:-webkit-autofill,
+.user input:-webkit-autofill:hover,
+.user input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.action-container,
+.user-stats {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 1rem;
+  gap: 1rem;
+  margin: 0 1rem;
+}
+
+.user-stats {
+  gap: 0.8rem;
+}
+
+.user-stats img {
+  width: 30px;
+  border-radius: 50%;
+  border: solid 2px #fff;
+}
+
+.user-stats i {
+  font-size: 1.5rem;
+}
+
+.action-container a {
+  font-size: 1rem;
+}
+
+.action-container button {
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
+.action-container .category {
+  position: relative;
+}
+
+.action-container .category i {
+  font-size: 0.8rem;
+}
+
+.action-container .category .category-button {
+  transform: translate(0%, 8%);
+}
+
+.action-container .category p,
+.action-container .category .category-button {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.action-container .category p:hover,
+.action-container .category .category-button:hover {
+  color: var(--vermelho);
+}
+
+.action-container .category .category-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background-color: var(--cinza);
+  padding: 1rem;
+  list-style: none;
+  font-size: 0.8rem;
+}

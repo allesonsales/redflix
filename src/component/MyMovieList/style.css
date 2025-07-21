@@ -1,0 +1,23 @@
+#my-list {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 8rem 4rem;
+  gap: 4rem;
+  font-size: 1.2rem;
+}
+
+#my-list h2 {
+  align-self: center;
+  color: var(--vermelho);
+}
+
+.empty-list {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  align-self: center;
+}

@@ -1,0 +1,85 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: fit-content;
+}
+
+.modal button {
+  background-color: var(--cinza);
+  color: white;
+  padding: 0.8rem;
+  cursor: pointer;
+  border-radius: 15px;
+  min-width: 150px;
+  margin: 5px;
+  transition: 0.5s;
+  font-size: 1rem;
+}
+
+.modal button:hover {
+  background-color: var(--vermelho);
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal .form-control {
+  position: relative;
+}
+
+.modal .form-control button {
+  background-color: transparent;
+  min-width: 0;
+  position: absolute;
+  right: 0;
+  color: var(--vermelho);
+  outline: none;
+}
+
+.modal .form-control button:hover {
+  color: var(--cinza);
+}
+
+.modal form input {
+  color: var(--cinza);
+}
+
+.delete span {
+  font-size: 1rem;
+  text-align: center;
+  width: 70%;
+  margin-bottom: 2rem;
+  color: var(--vermelho);
+  line-height: 25px;
+}
+
+.delete img {
+  height: 150px;
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+.delete .cancel {
+  background-color: var(--vermelho);
+}
+
+.deleted {
+  background-color: var(--cinza);
+  color: #fff;
+}
+
+.deleted img {
+  height: 350px;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .delete img {
+    height: 350px;
+  }
+}

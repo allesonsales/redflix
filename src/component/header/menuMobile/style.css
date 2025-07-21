@@ -1,0 +1,86 @@
+.mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100vw;
+}
+
+.mobile .left-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile .left-container img {
+  width: 4rem;
+}
+
+.mobile .center-container input {
+  background-color: transparent;
+  border: solid 2px #fff;
+  border-radius: 15px;
+  padding: 0.5rem;
+}
+
+.mobile {
+  position: relative;
+}
+
+.mobile .right-container .menu-toggle {
+  color: var(--vermelho);
+  font-size: 2rem;
+}
+
+.mobile .menu-mobile-open {
+  background-color: var(--cinza);
+  position: fixed;
+  color: red;
+  top: 4rem;
+  right: 0;
+  height: 96vh;
+  list-style: none;
+  padding: 2rem;
+  overflow: scroll;
+  min-width: 255px;
+}
+
+.mobile .menu-mobile-open ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mobile .menu-mobile-open .user-stats {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 1rem;
+}
+
+.mobile .menu-mobile-open button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.mobile .menu-mobile-open .logout {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+}
+
+.mobile .menu-mobile-open .category-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: #fff;
+  font-size: 0.8rem;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}

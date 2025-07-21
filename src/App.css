@@ -1,0 +1,14 @@
+#root {
+  font-size: 16px;
+  --vermelho: #e50914;
+  --vermelho-hover: #c7242c;
+  --cinza: #221f1f;
+  --preto: #000000;
+  --branco: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
