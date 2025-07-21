@@ -1,0 +1,84 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "A Origem",
+      "year": 2010,
+      "rating": 8.8,
+      "genres": ["Ação", "Ficção científica"],
+      "description": "Um ladrão que invade os sonhos para roubar segredos precisa plantar uma ideia impossível.",
+      "poster": "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_SY679_.jpg",
+      "trailer": "https://www.youtube.com/embed/8hP8f3Psyzs"
+    },
+    {
+      "id": 2,
+      "title": "Clube da Luta",
+      "year": 1999,
+      "rating": 8.8,
+      "genres": ["Drama"],
+      "description": "Um homem entediado forma um clube secreto de lutas que evolui para algo muito maior.",
+      "poster": "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_SY679_.jpg",
+      "trailer": "https://www.youtube.com/embed/8hP8f3Psyzs"
+    },
+    {
+      "id": 3,
+      "title": "Matrix",
+      "year": 1999,
+      "rating": 8.7,
+      "genres": ["Ação", "Ficção científica"],
+      "description": "Um hacker descobre a verdade sobre a realidade em que vive e seu papel contra os controladores.",
+      "poster": "https://m.media-amazon.com/images/I/51EG732BV3L._AC_SY679_.jpg",
+      "trailer": "https://www.youtube.com/embed/8hP8f3Psyzs"
+    },
+    {
+      "id": 4,
+      "title": "O Senhor dos Anéis: A Sociedade do Anel",
+      "year": 2001,
+      "rating": 8.8,
+      "genres": ["Aventura", "Fantasia"],
+      "description": "Um hobbit parte em uma jornada épica para destruir um anel poderoso e salvar a Terra-média.",
+      "poster": "https://m.media-amazon.com/images/I/51Qvs9i5a%2BL._AC_SY679_.jpg",
+      "trailer": "https://www.youtube.com/embed/8hP8f3Psyzs"
+    },
+    {
+      "id": 5,
+      "title": "A Origem",
+      "year": 2010,
+      "rating": 8.8,
+      "genres": ["Ação", "Ficção científica"],
+      "description": "Um ladrão que invade os sonhos para roubar segredos precisa plantar uma ideia impossível.",
+      "poster": "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_SY679_.jpg",
+      "trailer": "https://www.youtube.com/embed/8hP8f3Psyzs"
+    },
+    {
+      "id": 6,
+      "title": "Clube da Luta",
+      "year": 1999,
+      "rating": 8.8,
+      "genres": ["Drama"],
+      "description": "Um homem entediado forma um clube secreto de lutas que evolui para algo muito maior.",
+      "poster": "https://m.media-amazon.com/images/I/51v5ZpFyaFL._AC_SY679_.jpg",
+      "trailer": "https://www.youtube.com/embed/8hP8f3Psyzs"
+    },
+    {
+      "id": 7,
+      "title": "Matrix",
+      "year": 1999,
+      "rating": 8.7,
+      "genres": ["Ação", "Ficção científica"],
+      "description": "Um hacker descobre a verdade sobre a realidade em que vive e seu papel contra os controladores.",
+      "poster": "https://m.media-amazon.com/images/I/51EG732BV3L._AC_SY679_.jpg",
+      "trailer": "https://www.youtube.com/embed/8hP8f3Psyzs"
+    },
+    {
+      "id": 8,
+      "title": "O Senhor dos Anéis: A Sociedade do Anel",
+      "year": 2001,
+      "rating": 8.8,
+      "genres": ["Aventura", "Fantasia"],
+      "description": "Um hobbit parte em uma jornada épica para destruir um anel poderoso e salvar a Terra-média.",
+      "poster": "https://m.media-amazon.com/images/I/51Qvs9i5a%2BL._AC_SY679_.jpg",
+      "trailer": "https://www.youtube.com/embed/8hP8f3Psyzs"
+    }
+  ]
+}
