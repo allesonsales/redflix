@@ -20,13 +20,16 @@ function RedRoutes() {
           <AuthProvider>
             <Header />
             <Routes>
-              <Route path="/" element={<Login />} />
-              <Route path="/registre-se" element={<Register />} />
-              <Route path="/recuperar" element={<RecoverPassword />} />
-              <Route path="/configuracoes" element={<Config />} />
-              <Route path="/filmes" element={<MovieList />} />
-              <Route path="/filmes/:id" element={<MoviePage />} />
-              <Route path="/filmes/minha-lista" element={<MyMovieList />} />
+              <Route path="/redflix" element={<Login />} />
+              <Route path="/redflix/registre-se" element={<Register />} />
+              <Route path="/redflix/recuperar" element={<RecoverPassword />} />
+              <Route path="/redflix/configuracoes" element={<Config />} />
+              <Route path="/redflix/filmes" element={<MovieList />} />
+              <Route path="/reflix/filmes/:id" element={<MoviePage />} />
+              <Route
+                path="/redflix/filmes/minha-lista"
+                element={<MyMovieList />}
+              />
             </Routes>
           </AuthProvider>
         </GlobalProvider>
