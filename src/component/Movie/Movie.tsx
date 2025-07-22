@@ -41,7 +41,8 @@ function MoviePage() {
       .filter(Boolean) as string[];
   };
 
-  const genresNames = getGenresNames(movie.genre_ids);
+  const genresNames = movie?.genre_ids ? getGenresNames(movie.genre_ids) : [];
+
   useEffect(() => {
     if (movie?.genre_ids && genres.length > 0) {
       const names = movie.genre_ids

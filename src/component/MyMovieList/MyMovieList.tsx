@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useMyMovies from "../MovieList/hooks/useMyMovies";
 import { Link } from "react-router-dom";
 import "./style.css";
@@ -12,10 +12,6 @@ function MyMovieList() {
 
   const { myMovies: myMovieList, toggleMovie } = useMyMovies();
 
-  useEffect(() => {
-    console.log(myMovieList);
-  }, [myMovieList]);
-
   return (
     <>
       <section id="my-list">
@@ -24,10 +20,18 @@ function MyMovieList() {
           {myMovieList && myMovieList.length > 0 ? (
             <ul>
               {myMovieList.map((item) => {
-                const { movie } = item;
-                const { title, poster_path, id, genre_names, vote_average } =
-                  movie;
-                const genreNames: string[] = genre_names ?? [];
+                const { movie, movieId } = item;
+                const id = movie?.id || movieId;
+                const { title, poster_path, genre_names, vote_average } = movie;
+                const genreNames: string[] = Array.isArray(genre_names)
+                  ? genre_names
+                  : (() => {
+                      try {
+                        return genre_names ? JSON.parse(genre_names) : [];
+                      } catch {
+                        return [];
+                      }
+                    })();
                 const year = movie.release_date
                   ? movie.release_date.slice(0, 4)
                   : "N/A";
@@ -45,7 +49,7 @@ function MyMovieList() {
                     onMouseEnter={() => setActiveMovie(id)}
                     onMouseLeave={() => setActiveMovie(null)}
                   >
-                    <Link to={`/filmes/${id}`} state={{ movie }}>
+                    <Link to={`/redflix/filmes/${id}`} state={{ movie }}>
                       <img src={poster} alt={title} />
                       {activeMovie === id && (
                         <>
@@ -53,7 +57,7 @@ function MyMovieList() {
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
-                              toggleMovie(movie, genreNames as string[]);
+                              toggleMovie(movie, genre_names as string[]);
                             }}
                           >
                             <i

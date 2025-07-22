@@ -2,11 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import type { modalDeleteProps } from "../../../../interfaces";
 import { AuthContext } from "../../../../contexts/AuthContexts";
 import { AnimatePresence, motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function ModalDelete({ isOpen, onClose, user }: modalDeleteProps) {
   const auth = useContext(AuthContext);
   const [deletedAccount, setDeletedAccount] = useState<boolean>(false);
   const [deletedMessage, setDeletedMessage] = useState<string>("");
+  const navigate = useNavigate();
+  const endereco = import.meta.env.VITE_BASE_URL;
   if (!auth) return null;
 
   const { logout } = auth;
@@ -16,6 +19,7 @@ function ModalDelete({ isOpen, onClose, user }: modalDeleteProps) {
     if (deletedAccount) {
       const timer = setTimeout(() => {
         logout();
+        navigate("/redflix");
       }, 2500);
       return () => clearTimeout(timer);
     }
@@ -23,7 +27,7 @@ function ModalDelete({ isOpen, onClose, user }: modalDeleteProps) {
 
   const deleteAccount = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/auth/delete`, {
+      const res = await fetch(`${endereco}/auth/delete`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -60,7 +64,7 @@ function ModalDelete({ isOpen, onClose, user }: modalDeleteProps) {
               transition={{ duration: 0.3 }}
             >
               <i className="bi bi-x-circle" onClick={onClose}></i>
-              <img src="/delete.svg" alt="" />
+              <img src="/redflix/delete.svg" alt="Deletar conta" />
               <span>
                 Sentimos muito <strong>{user?.name}</strong>, deseja realmente
                 excluir sua conta?
@@ -100,7 +104,7 @@ function ModalDelete({ isOpen, onClose, user }: modalDeleteProps) {
                   setDeletedAccount(false);
                 }}
               ></i>
-              <img src="/deleted.svg" alt="" />
+              <img src="/redflix/deleted.svg" alt="Deletar conta" />
               <span>{deletedMessage}</span>
             </motion.div>
           </motion.div>

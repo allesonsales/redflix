@@ -18,12 +18,12 @@ function MenuDesktop({
   return (
     <>
       <div className="left-container">
-        <Link to="/">
-          <img src="/logo.png" alt="Readflix" />
+        <Link to="/redflix">
+          <img src="/redflix/logo.png" alt="Readflix" />
         </Link>
         <div className="action-container">
           <Link
-            to="/filmes"
+            to="/redflix/filmes"
             onClick={() => {
               setSearched?.("");
               setShowCategory?.(false);
@@ -32,7 +32,7 @@ function MenuDesktop({
             Filmes
           </Link>
           <Link
-            to="/filmes/minha-lista"
+            to="/redflix/filmes/minha-lista"
             onClick={() => {
               setShowCategory?.(false);
             }}
@@ -67,7 +67,7 @@ function MenuDesktop({
                       key={genres.id}
                       onClick={() => {
                         setSelectedGenre?.(genres.id);
-                        navigate?.("/filmes#lista");
+                        navigate?.("/redflix/filmes#lista");
                         setSearched?.("");
                         setShowCategory?.(false);
                       }}
@@ -109,7 +109,7 @@ function MenuDesktop({
                 setSelectedGenre?.(null);
                 setSearching?.(false);
                 setShowCategory?.(false);
-                navigate?.("/filmes#lista");
+                navigate?.("/redflix/filmes#lista");
               }
             }
           }}
@@ -126,7 +126,7 @@ function MenuDesktop({
         </div>
         <button>
           <Link
-            to={"/configuracoes"}
+            to={"/redflix/configuracoes"}
             onClick={() => {
               setShowCategory?.(false);
             }}

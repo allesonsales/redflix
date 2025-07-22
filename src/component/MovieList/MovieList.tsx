@@ -13,7 +13,8 @@ function MovieList() {
   const { genres, selectedGenre, searched } = useGlobalContext();
   const { myMovies: myMovieList, setMyMovies: setMyMovieList } = useMyMovies();
 
-  const getGenresNames = (genresIds: number[]) => {
+  const getGenresNames = (genresIds?: number[]) => {
+    if (!genres.length || !genresIds || genresIds.length === 0) return [];
     return genresIds
       .map((id) => genres.find((g) => g.id === id)?.name)
       .filter(Boolean) as string[];

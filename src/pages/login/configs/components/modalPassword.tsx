@@ -52,7 +52,7 @@ function ModalPassword({ isOpen, onClose }: modalConfigsProps) {
         }
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
         setModalMessage("Erro ao atualizar a senha. Tente novamente.");
         setNotificationOpen(true);
       });

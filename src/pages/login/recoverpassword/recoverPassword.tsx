@@ -11,15 +11,15 @@ function RecoverPassword() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [modalMessage, setModalMessage] = useState<string>("");
   const auth = useContext(AuthContext);
+  const endereco = import.meta.env.VITE_BASE_URL;
 
   if (!auth) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("chmado");
 
     try {
-      const res = await fetch("http://localhost:3000/auth/verificar-email", {
+      const res = await fetch(`${endereco}/auth/verificar-email`, {
         method: "POST",
         headers: { "Content-type": "application/JSON" },
         body: JSON.stringify({ userName, email, password }),
@@ -43,7 +43,7 @@ function RecoverPassword() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:3000/auth/recuperar-senha", {
+      const res = await fetch(`${endereco}/auth/recuperar-senha`, {
         method: "POST",
         headers: { "Content-type": "application/JSON" },
         body: JSON.stringify({ email, password }),

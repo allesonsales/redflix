@@ -110,6 +110,14 @@
   margin: 2rem auto;
 }
 
+.title-movie {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);

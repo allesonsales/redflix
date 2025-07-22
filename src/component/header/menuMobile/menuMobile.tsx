@@ -21,8 +21,8 @@ function MenuMobile({
     <>
       <div className="mobile">
         <div className="left-container">
-          <Link to="/">
-            <img src="/logo.png" alt="Readflix" />
+          <Link to="/redflix/filmes">
+            <img src="/redflix/logo.png" alt="Redflix" />
           </Link>
         </div>
 
@@ -71,7 +71,7 @@ function MenuMobile({
                 <ul>
                   <li>
                     <Link
-                      to="/filmes"
+                      to="/redflix/filmes"
                       onClick={() => {
                         setSearched?.("");
                         setMenuOpen(false);
@@ -82,7 +82,7 @@ function MenuMobile({
                   </li>
                   <li>
                     <Link
-                      to="/filmes/minha-lista"
+                      to="/redflix/filmes/minha-lista"
                       onClick={() => {
                         setMenuOpen(false);
                       }}
@@ -116,7 +116,7 @@ function MenuMobile({
                                 key={genres.id}
                                 onClick={() => {
                                   setSelectedGenre?.(genres.id);
-                                  navigate?.("/filmes#lista");
+                                  navigate?.("/redflix/filmes#lista");
                                   setSearched?.("");
                                   setShowCategory?.(false);
                                   setMenuOpen(false);
@@ -135,7 +135,7 @@ function MenuMobile({
                 <div className="logout">
                   <button>
                     <Link
-                      to={"/configuracoes"}
+                      to={"/redflix/configuracoes"}
                       onClick={() => setMenuOpen(false)}
                     >
                       <i className="bi bi-gear-fill"></i>

@@ -6,9 +6,10 @@ export default function useMyMovies() {
   const [modalMessage, setModalMessage] = useState<string>("");
 
   const token = localStorage.getItem("token");
+  const endereco = import.meta.env.VITE_BASE_URL;
 
   useEffect(() => {
-    fetch(`http://localhost:3000/movies/get-movie`, {
+    fetch(`${endereco}/movies/get-movie`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -21,7 +22,7 @@ export default function useMyMovies() {
 
   const toggleMovie = async (movie: Movie, genresNames: string[]) => {
     try {
-      const res = await fetch(`http://localhost:3000/movies/add-movie`, {
+      const res = await fetch(`${endereco}/movies/add-movie`, {
         method: `POST`,
         headers: {
           Authorization: `Bearer ${token}`,
@@ -33,13 +34,10 @@ export default function useMyMovies() {
       const data = await res.json();
 
       if (res.ok) {
-        const updatedMmovies = await fetch(
-          `http://localhost:3000/movies/get-movie`,
-          {
-            method: "GET",
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        ).then((res) => res.json());
+        const updatedMmovies = await fetch(`${endereco}/movies/get-movie`, {
+          method: "GET",
+          headers: { Authorization: `Bearer ${token}` },
+        }).then((res) => res.json());
 
         setMyMovies(updatedMmovies);
       } else {

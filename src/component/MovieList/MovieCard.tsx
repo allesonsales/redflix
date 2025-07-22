@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { Movie, MovieCardProps } from "../../interfaces";
+import type { MovieCardProps } from "../../interfaces";
 import "./style.css";
 
 function MovieCard({
@@ -15,7 +15,11 @@ function MovieCard({
 }: MovieCardProps) {
   const { id, title, release_date, vote_average, poster_path } = movie;
 
-  const matchMovie = myMovieList?.some((fav: Movie) => fav.id === id);
+  const endereco = import.meta.env.VITE_BASE_URL;
+
+  const matchMovie = myMovieList?.some(
+    (fav) => Number(fav.movieId) === Number(id)
+  );
 
   const year = release_date ? release_date.slice(0, 4) : "N/A";
   const poster = poster_path
@@ -26,7 +30,7 @@ function MovieCard({
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://localhost:3000/movies/add-movie", {
+      const res = await fetch(`${endereco}/movies/add-movie`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -34,17 +38,15 @@ function MovieCard({
         },
         body: JSON.stringify({ movie, genresNames }),
       });
+      console.log("toggleMovie recebido:", movie);
 
       const data = await res.json();
       if (res.ok) {
-        const updatedMovies = await fetch(
-          "http://localhost:3000/movies/get-movie",
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        ).then((res) => res.json());
+        const updatedMovies = await fetch(`${endereco}/movies/get-movie`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }).then((res) => res.json());
 
-        setMyMovieList?.(updatedMovies);
+        setMyMovieList?.([...updatedMovies]);
       } else {
         setModalMessage?.(data.message);
         setIsOpen?.(true);
@@ -61,7 +63,7 @@ function MovieCard({
         onMouseLeave={() => setActiveMovie(null)}
         className={activeMovieId === id ? "active" : ""}
       >
-        <Link to={`/filmes/${id}`} state={{ movie }}>
+        <Link to={`/redflix/filmes/${id}`} state={{ movie }}>
           <img src={poster} alt={title} />
           {activeMovieId === id && (
             <>
@@ -80,7 +82,7 @@ function MovieCard({
               </button>
               <div className="description">
                 <div className="row">
-                  <h3>{title}</h3>
+                  <h3 className="title-movie">{title}</h3>
                   <div className="rating">
                     {Array.from({ length: ratingMovie(vote_average) }).map(
                       (_, i) => (

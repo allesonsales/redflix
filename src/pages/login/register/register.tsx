@@ -20,6 +20,7 @@ function Register() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
+  const endereco = import.meta.env.VITE_BASE_URL;
 
   if (!auth) {
     return null;
@@ -40,7 +41,7 @@ function Register() {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/auth/registre-se", {
+      const res = await fetch(`${endereco}/auth/registre-se`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({
@@ -58,7 +59,7 @@ function Register() {
       if (res.ok) {
         localStorage.setItem("token", data.token);
         login(data.token, data.user);
-        navigate("/filmes");
+        navigate("/redflix/filmes");
       } else {
         setModalMessage(data.message);
         setIsOpen(true);

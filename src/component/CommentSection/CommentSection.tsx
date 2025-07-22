@@ -33,7 +33,6 @@ function CommentSection({ movie, genresNames }: CommentSectionProps) {
 
       if (res.ok) {
         setComments(data);
-        console.log("funfou");
       } else {
         setModalMessage(data.message);
         setIsOpen(true);

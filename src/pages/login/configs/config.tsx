@@ -127,6 +127,7 @@ function Config() {
               <i className="bi bi-person-circle"></i>
             )}
           </div>
+          <small className="small">Clique na imagem para alterar a foto</small>
           <div className="user-info">
             <h3>Dados do usuário</h3>
             <p>

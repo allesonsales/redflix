@@ -55,12 +55,12 @@ function Header() {
       ) : (
         <>
           <div className="left-container">
-            <Link to="/">
-              <img src="/logo.png" alt="Readflix" />
+            <Link to="/redflix">
+              <img src="/redflix/logo.png" alt="Redflix" />
             </Link>
 
-            <Link to="/">Entrar</Link>
-            <Link to="/registre-se">Registre-se</Link>
+            <Link to="/redflix">Entrar</Link>
+            <Link to="/redflix/registre-se">Registre-se</Link>
           </div>
         </>
       )}

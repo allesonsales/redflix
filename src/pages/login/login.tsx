@@ -12,6 +12,7 @@ function Login() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const auth = useContext(AuthContext);
   const navigate = useNavigate();
+  const endereco = import.meta.env.VITE_BASE_URL;
 
   if (!auth) {
     return null;
@@ -23,7 +24,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:3000/auth/login", {
+      const res = await fetch(`${endereco}/auth/login`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -80,10 +81,10 @@ function Login() {
           </div>
           <input type="submit" value="Entrar" />
         </form>
-        <Link to="/registre-se">
+        <Link to="/redflix/registre-se">
           <button className="create">Criar conta</button>
         </Link>
-        <Link to="/recuperar" className="recuperar-senha">
+        <Link to="/redflix/recuperar" className="recuperar-senha">
           Esqueceu sua senha?
         </Link>
       </div>
@@ -93,7 +94,7 @@ function Login() {
         onClose={() => {
           setIsOpen(false);
           if (auth.user) {
-            navigate("/filmes");
+            navigate("/redflix/filmes");
           }
         }}
       />
