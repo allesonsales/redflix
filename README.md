@@ -1,54 +1,69 @@
-# React + TypeScript + Vite
+<h1 style="color:red;">🎬 RedFlix</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Preview do RedFlix](./public/redread.png)
 
-Currently, two official plugins are available:
+O **RedFlix** é uma plataforma social (com estilo padrão netflix) com catálogo de filmes onde o usuário pode montar uma lista personalizada, comentar sobre filmes, e principalmente... **encontrar algo bom para assistir!** 🍿
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀Tecnologias
 
-## Expanding the ESLint configuration
+### 🧩 Frontend
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- HTML
+- CSS
+- React
+- TypeScript
+- Framer-Motion
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 🧠 Backend
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Node.Js
+- Sequelize – ORM para banco de dados relacional
+- JWT - Autenticação com tokens
+- Padrão **MVC** – Estrutura de **Model**, **View** e **Controller**, seguindo princípios de **programação orientada a objetos**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Funcionalidades
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- Autenticação de usuário
+- Rotas privadas com verificação via token
+- Recuperação de Senha
+- Cadastro de usuários
+- Rotas Privadas
+- Responsividade com detecção de dispositivo
+- Filtro de filmes por gênero
+- Busca de filmes
+- Lista de favoritos dinâmica
+- Comentários nos filmes
+- Like e dislike nos comentários
+
+## Como rodar localmente?
+
+1. Clone o Repositório:
+
+- git clone https://github.com/seu-usuario/redflix.git
+- cd redflix
+
+2. Instale as dependências
+
+- npm install
+
+3. Crie dois arquivos .env com os dados abaixo
+
+### 🌐 Frontend (.env na raiz do frontend)
+
+VITE_REACT_APP_API_KEY=sua_chave_tmdb
+VITE_API_URL=https://seu-backend.up.railway.app
+
+### 🛢️ Backend (.env na raiz do backend)
+
+DB_HOST=
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
+JWT_SECRET=
+
+---
+
+## 👨‍💻 Autor
+
+Esse projeto tem caráter de estudo e foi desenvolvido por [Alleson Sales](https://github.com/allesonsales)
+[Linkedin](https://www.linkedin.com/in/allesonsales/) | [Portfólio](https://allesonsales.github.io/portfolio)
