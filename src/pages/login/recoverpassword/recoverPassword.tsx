@@ -94,6 +94,7 @@ function RecoverPassword() {
                   placeholder="Digite sua senha"
                 />
                 <button
+                  className="password"
                   type="button"
                   onClick={() => setShowPassword((prev) => !prev)}
                 >
