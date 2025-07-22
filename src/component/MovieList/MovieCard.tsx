@@ -41,7 +41,6 @@ function MovieCard({
         },
         body: JSON.stringify({ movie, genresNames }),
       });
-      console.log("toggleMovie recebido:", movie);
 
       const data = await res.json();
       if (res.ok) {

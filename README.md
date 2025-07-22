@@ -50,20 +50,20 @@ O **RedFlix** é uma plataforma social (com estilo padrão netflix) com catálog
 
 ### 🌐 Frontend (.env na raiz do frontend)
 
-VITE_REACT_APP_API_KEY=sua_chave_tmdb
-VITE_API_URL=https://seu-backend.up.railway.app
+- VITE_REACT_APP_API_KEY=sua_chave_tmdb
+- VITE_API_URL=https://seu-backend.up.railway.app
 
 ### 🛢️ Backend (.env na raiz do backend)
 
-DB_HOST=
-DB_USER=
-DB_PASSWORD=
-DB_NAME=
-JWT_SECRET=
+- DB_HOST=
+- DB_USER=
+- DB_PASSWORD=
+- DB_NAME=
+- JWT_SECRET=
 
 ---
 
 ## 👨‍💻 Autor
 
-Esse projeto tem caráter de estudo e foi desenvolvido por [Alleson Sales](https://github.com/allesonsales)
-[Linkedin](https://www.linkedin.com/in/allesonsales/) | [Portfólio](https://allesonsales.github.io/portfolio)
+Esse projeto tem caráter de estudo e foi desenvolvido por [Alleson Sales](https://github.com/allesonsales).
+Redes: [Linkedin](https://www.linkedin.com/in/allesonsales/) | [Portfólio](https://allesonsales.github.io/portfolio)

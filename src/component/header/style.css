@@ -37,6 +37,10 @@ header .left-container {
   font-size: 1rem;
 }
 
+header .left-container a {
+  text-align: center;
+}
+
 .user button {
   background-color: transparent;
   color: #fff;
