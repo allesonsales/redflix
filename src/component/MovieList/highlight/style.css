@@ -21,7 +21,7 @@
 #highlight .video-container button {
   position: absolute;
   z-index: 50;
-  right: 8rem;
+  right: 2rem;
   color: white;
   background-color: transparent;
   border-radius: 50%;
@@ -83,4 +83,10 @@
 #highlight .description h2 {
   font-size: 2rem;
   color: var(--vermelho);
+}
+
+@media (min-width: 1024px) {
+  #highlight .video-container button {
+    right: 8rem;
+  }
 }
