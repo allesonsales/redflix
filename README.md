@@ -25,6 +25,8 @@ O **RedFlix** é uma plataforma social (com estilo padrão netflix) com catálog
 
 ## Funcionalidades
 
+### Além de funcionar como um aplicativo progressivo (PWA), podendo ser instalado em dispositivos móveis, o projeto oferece as seguintes funcionalidades:
+
 - Autenticação de usuário
 - Senhas protegidas com hash
 - Rotas privadas com verificação via token
