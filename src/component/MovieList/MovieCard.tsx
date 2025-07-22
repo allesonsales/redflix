@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { MovieCardProps } from "../../interfaces";
 import "./style.css";
+import { useGlobalContext } from "../../contexts/providerContext";
 
 function MovieCard({
   movie,
@@ -14,6 +15,8 @@ function MovieCard({
   setMyMovieList,
 }: MovieCardProps) {
   const { id, title, release_date, vote_average, poster_path } = movie;
+
+  const { isMobile } = useGlobalContext();
 
   const endereco = import.meta.env.VITE_BASE_URL;
 
@@ -65,6 +68,21 @@ function MovieCard({
       >
         <Link to={`/redflix/filmes/${id}`} state={{ movie }}>
           <img src={poster} alt={title} />
+          {isMobile && (
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleList();
+              }}
+            >
+              <i
+                className={`bi ${
+                  matchMovie ? "bi-dash-circle-fill" : "bi-plus-circle"
+                }`}
+              ></i>
+            </button>
+          )}
           {activeMovieId === id && (
             <>
               <button
@@ -80,6 +98,7 @@ function MovieCard({
                   }`}
                 ></i>
               </button>
+
               <div className="description">
                 <div className="row">
                   <h3 className="title-movie">{title}</h3>
