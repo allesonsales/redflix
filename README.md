@@ -1,4 +1,6 @@
-<h1 style="color:red;">🎬 RedFlix</h1>
+🎬 RedFlix
+
+[Live site](https://allesonsales.github.io/redflix/)
 
 ![Preview do RedFlix](./public/redread.png)
 
@@ -24,6 +26,7 @@ O **RedFlix** é uma plataforma social (com estilo padrão netflix) com catálog
 ## Funcionalidades
 
 - Autenticação de usuário
+- Senhas protegidas com hash
 - Rotas privadas com verificação via token
 - Recuperação de Senha
 - Cadastro de usuários
