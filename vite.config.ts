@@ -20,7 +20,7 @@ export default defineConfig({
         description:
           "Sinopses e listas de filmes, além de redes sociais dedicadas ao universo cinematográfico.",
         theme_color: "#000000",
-        background_color: "#ffffff",
+        background_color: "#000000",
         display: "standalone",
         start_url: "/redflix",
         icons: [
