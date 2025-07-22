@@ -6,7 +6,7 @@ type PrivateRouteProps = {
   children: JSX.Element;
 };
 
-export default function PrivateRoute({ children }: PrivateRouteProps) {
+function PrivateRoute({ children }: PrivateRouteProps) {
   const auth = useContext(AuthContext);
 
   if (!auth?.user) {
@@ -15,3 +15,5 @@ export default function PrivateRoute({ children }: PrivateRouteProps) {
 
   return children;
 }
+
+export default PrivateRoute;
