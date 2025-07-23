@@ -21,7 +21,7 @@ function ModalPassword({ isOpen, onClose }: modalConfigsProps) {
   if (!auth) return null;
 
   const { user } = auth;
-  const endereco = "http://localhost:3000";
+  const endereco = import.meta.env.VITE_BASE_URL;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

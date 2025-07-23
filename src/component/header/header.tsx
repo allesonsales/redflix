@@ -55,12 +55,19 @@ function Header() {
       ) : (
         <>
           <div className="left-container">
-            <Link to="/redflix">
+            <Link
+              to="/redflix"
+              aria-label="Redflix é uma plataforma para encontrar o que assistir"
+            >
               <img src="/redflix/logo.png" alt="Redflix" />
             </Link>
 
-            <Link to="/redflix">Entrar</Link>
-            <Link to="/redflix/registre-se">Registre-se</Link>
+            <Link to="/redflix" aria-label="Fazer login">
+              Entrar
+            </Link>
+            <Link to="/redflix/registre-se" aria-label="Criar nova conta">
+              Registre-se
+            </Link>
           </div>
         </>
       )}

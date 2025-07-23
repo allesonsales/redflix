@@ -18,11 +18,15 @@ function MenuDesktop({
   return (
     <>
       <div className="left-container">
-        <Link to="/redflix">
-          <img src="/redflix/logo.png" alt="Readflix" />
+        <Link
+          to="/redflix/filmes"
+          aria-label="RedFlix é uma plataforma pra encontrar o que assistir!"
+        >
+          <img src="/redflix/logo.png" alt="Redflix" />
         </Link>
         <div className="action-container">
           <Link
+            aria-label="Ir para lista de filmes"
             to="/redflix/filmes"
             onClick={() => {
               setSearched?.("");
@@ -32,6 +36,7 @@ function MenuDesktop({
             Filmes
           </Link>
           <Link
+            aria-label="Ir para minha lista de filmes"
             to="/redflix/filmes/minha-lista"
             onClick={() => {
               setShowCategory?.(false);
@@ -41,6 +46,7 @@ function MenuDesktop({
           </Link>
           <div className="category">
             <button
+              aria-label="Mostrar ou ocultar Categorias"
               className="category-button"
               onClick={() => {
                 setShowCategory?.((prev) => !prev);
@@ -64,6 +70,7 @@ function MenuDesktop({
                 >
                   {genres?.map((genres) => (
                     <li
+                      aria-label={genres.name}
                       key={genres.id}
                       onClick={() => {
                         setSelectedGenre?.(genres.id);
@@ -99,6 +106,7 @@ function MenuDesktop({
           )}
         </AnimatePresence>
         <button
+          aria-label="Pesquisar filme!"
           onClick={() => {
             if (!searching) {
               setSearching?.(true);
@@ -126,6 +134,7 @@ function MenuDesktop({
         </div>
         <button>
           <Link
+            aria-label="Ir para configurações"
             to={"/redflix/configuracoes"}
             onClick={() => {
               setShowCategory?.(false);
@@ -134,7 +143,9 @@ function MenuDesktop({
             <i className="bi bi-gear-fill"></i>
           </Link>
         </button>
-        <button onClick={logout}>Sair</button>
+        <button aria-label="Sair" onClick={logout}>
+          Sair
+        </button>
       </div>
     </>
   );

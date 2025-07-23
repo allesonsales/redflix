@@ -15,7 +15,7 @@ function Config() {
   const inputRef = useRef<HTMLInputElement>(null);
   const token = localStorage.getItem("token");
 
-  const endereco = "http://localhost:3000";
+  const endereco = import.meta.env.VITE_BASE_URL;
 
   const auth = useContext(AuthContext);
 
@@ -103,6 +103,7 @@ function Config() {
         <div className="user-container">
           <div
             className="user-photo"
+            aria-label="Foto do usuário"
             onMouseEnter={() => setNewPhoto(true)}
             onMouseLeave={() => setNewPhoto(false)}
           >
@@ -114,7 +115,11 @@ function Config() {
               onChange={handlePhoto}
             />
             {newPhoto && (
-              <div className="switch-photo" onClick={triggerInput}>
+              <div
+                className="switch-photo"
+                aria-label="Trocar foto"
+                onClick={triggerInput}
+              >
                 <i className="bi bi-image-fill"></i>
                 <small>Alterar foto</small>
               </div>
@@ -154,6 +159,7 @@ function Config() {
           <h3>Gerenciamento da conta</h3>
           <div className="actions-container">
             <p
+              aria-label="Alterar Senha"
               className="config-action"
               onClick={() => {
                 setIsOpen("password");
@@ -162,6 +168,7 @@ function Config() {
               Alterar senha
             </p>
             <p
+              aria-label="Excluir Conta"
               className="config-action"
               onClick={() => {
                 setIsOpen("delete");

@@ -120,7 +120,7 @@ blockquote .user {
 }
 
 blockquote .user img {
-  width: 50px;
+  width: 30px;
   border-radius: 50%;
   border: solid 3px #fff;
 }
@@ -138,6 +138,7 @@ blockquote figcaption {
   font-size: 1rem;
   text-align: center;
   font-weight: 400;
+  margin-top: 1rem;
 }
 
 blockquote .likes {
@@ -167,6 +168,10 @@ blockquote .likes p {
 @media (min-width: 1024px) {
   #movie .add-coment {
     width: 60%;
+  }
+
+  blockquote .user img {
+    width: 50px;
   }
 
   .comments-container .actions {

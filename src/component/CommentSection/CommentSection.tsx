@@ -17,9 +17,11 @@ function CommentSection({ movie, genresNames }: CommentSectionProps) {
   const auth = useContext(AuthContext);
   const token = localStorage.getItem("token");
 
+  const endereco = import.meta.env.VITE_BASE_URL;
+
   const fetchComments = async () => {
     try {
-      const res = await fetch("http://localhost:3000/comment/get", {
+      const res = await fetch(`${endereco}/comment/get`, {
         method: "POST",
         cache: "no-store",
         headers: {
@@ -52,7 +54,7 @@ function CommentSection({ movie, genresNames }: CommentSectionProps) {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:3000/comment/add", {
+      const res = await fetch(`${endereco}/comment/add`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -89,7 +91,7 @@ function CommentSection({ movie, genresNames }: CommentSectionProps) {
 
   const deleteComment = async (id: number) => {
     try {
-      const res = await fetch("http://localhost:3000/comment/delete", {
+      const res = await fetch(`${endereco}/comment/delete`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -114,7 +116,7 @@ function CommentSection({ movie, genresNames }: CommentSectionProps) {
 
   const upComment = async (id: number) => {
     try {
-      const res = await fetch("http://localhost:3000/comment/like", {
+      const res = await fetch(`${endereco}/comment/like`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -138,7 +140,7 @@ function CommentSection({ movie, genresNames }: CommentSectionProps) {
 
   const downComment = async (id: number) => {
     try {
-      const res = await fetch("http://localhost:3000/comment/dislike", {
+      const res = await fetch(`${endereco}/comment/dislike`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -168,7 +170,7 @@ function CommentSection({ movie, genresNames }: CommentSectionProps) {
     <>
       <div className="add-coment">
         <h3>Adicionar um comentário:</h3>
-        <form onSubmit={handleComment}>
+        <form aria-label="Adicionar um comentário" onSubmit={handleComment}>
           <div className="form-control">
             <textarea
               name="comment"
@@ -176,7 +178,7 @@ function CommentSection({ movie, genresNames }: CommentSectionProps) {
               onChange={(e) => setComment(e.target.value)}
               placeholder="Diz ai o que achou do filme?"
             ></textarea>
-            <button type="submit">
+            <button type="submit" aria-label="Adicionar comentário">
               <i className="bi bi-plus-circle-fill"></i>
             </button>
           </div>
@@ -208,21 +210,36 @@ function CommentSection({ movie, genresNames }: CommentSectionProps) {
                 </div>
                 <div className="actions-buttons">
                   <div className="likes">
-                    {likes > 0 && <p>{likes}</p>}
+                    {likes > 0 && (
+                      <p aria-label={"Esse comentário tem " + likes + " likes"}>
+                        {likes}
+                      </p>
+                    )}
                     <i
+                      aria-label="Dar like"
                       className="bi bi-hand-thumbs-up-fill"
                       onClick={() => upComment(id)}
                     ></i>
                   </div>
                   <div className="likes">
-                    {dislikes > 0 && <p>{dislikes}</p>}
+                    {dislikes > 0 && (
+                      <p
+                        aria-label={
+                          "Esse comentário tem " + dislikes + " dislikes"
+                        }
+                      >
+                        {dislikes}
+                      </p>
+                    )}
                     <i
+                      aria-label="Dar dislike"
                       className="bi bi-hand-thumbs-down-fill"
                       onClick={() => downComment(id)}
                     ></i>
                   </div>
                   {user?.id === commentUserId && (
                     <i
+                      aria-label="Excluir seu comentário"
                       className="bi bi-trash3-fill"
                       onClick={() => deleteComment(id)}
                     ></i>

@@ -71,6 +71,7 @@ function MenuMobile({
                 <ul>
                   <li>
                     <Link
+                      aria-label="Ir para área de filmes!"
                       to="/redflix/filmes"
                       onClick={() => {
                         setSearched?.("");
@@ -82,6 +83,7 @@ function MenuMobile({
                   </li>
                   <li>
                     <Link
+                      aria-label="Ir para minha lista de filmes"
                       to="/redflix/filmes/minha-lista"
                       onClick={() => {
                         setMenuOpen(false);
@@ -93,6 +95,7 @@ function MenuMobile({
                   <li>
                     <div className="category">
                       <button
+                        aria-label="Mostrar ou ocultar categorias"
                         className="category-button"
                         onClick={() => setShowCategory?.((prev) => !prev)}
                       >
@@ -130,11 +133,11 @@ function MenuMobile({
                       </AnimatePresence>
                     </div>
                   </li>
-                  <li></li>
                 </ul>
                 <div className="logout">
                   <button>
                     <Link
+                      aria-label="Ir para configurações"
                       to={"/redflix/configuracoes"}
                       onClick={() => setMenuOpen(false)}
                     >

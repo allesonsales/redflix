@@ -92,6 +92,7 @@ function MovieCard({
                 }}
               >
                 <i
+                  aria-label="Adicionar ou remover filme da minha lista de favoritos"
                   className={`bi ${
                     matchMovie ? "bi-dash-circle-fill" : "bi-plus-circle"
                   }`}
