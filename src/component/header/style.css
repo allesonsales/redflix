@@ -149,3 +149,9 @@ header .left-container a {
   list-style: none;
   font-size: 0.8rem;
 }
+
+@media (min-width: 1024px) {
+  header {
+    padding: 1rem 3rem;
+  }
+}

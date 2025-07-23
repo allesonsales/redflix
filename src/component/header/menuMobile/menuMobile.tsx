@@ -34,6 +34,13 @@ function MenuMobile({
             onChange={(e) => {
               setSearched?.(e.target.value);
             }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                navigate?.("/redflix/filmes#lista");
+                setMenuOpen(false);
+              }
+            }}
             value={searched}
           />
         </div>
