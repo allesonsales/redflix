@@ -65,7 +65,7 @@ function MovieCard({
         onMouseLeave={() => setActiveMovie(null)}
         className={activeMovieId === id ? "active" : ""}
       >
-        <Link to={`/redflix/filmes/${id}`} state={{ movie }}>
+        <Link to={`/filmes/${id}`} state={{ movie }}>
           <img src={poster} alt={title} />
           {isMobile && (
             <button
@@ -124,6 +124,7 @@ function MovieCard({
             </>
           )}
         </Link>
+        {isMobile && <h3 className="title-mobile">{title}</h3>}
       </li>
     </>
   );

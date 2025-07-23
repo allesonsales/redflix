@@ -40,7 +40,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     localStorage.removeItem("user");
     setToken(null);
     setUser(null);
-    navigate("/redflix");
+    navigate("/");
   };
 
   return (

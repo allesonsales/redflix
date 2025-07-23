@@ -10,7 +10,7 @@ function PrivateRoute({ children }: PrivateRouteProps) {
   const auth = useContext(AuthContext);
 
   if (!auth?.user) {
-    return <Navigate to="/redflix" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return children;

@@ -49,7 +49,7 @@ function MyMovieList() {
                     onMouseEnter={() => setActiveMovie(id)}
                     onMouseLeave={() => setActiveMovie(null)}
                   >
-                    <Link to={`/redflix/filmes/${id}`} state={{ movie }}>
+                    <Link to={`/filmes/${id}`} state={{ movie }}>
                       <img src={poster} alt={title} />
                       {activeMovie === id && (
                         <>

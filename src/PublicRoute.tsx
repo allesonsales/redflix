@@ -10,7 +10,7 @@ function PublicRoute({ children }: PublicRoutesProps) {
   const auth = useContext(AuthContext);
 
   if (auth?.user) {
-    return <Navigate to="/redflix/filmes" replace />;
+    return <Navigate to="/filmes" replace />;
   }
 
   return children;

@@ -19,7 +19,7 @@ function ModalDelete({ isOpen, onClose, user }: modalDeleteProps) {
     if (deletedAccount) {
       const timer = setTimeout(() => {
         logout();
-        navigate("/redflix");
+        navigate("/");
       }, 2500);
       return () => clearTimeout(timer);
     }
@@ -66,8 +66,9 @@ function ModalDelete({ isOpen, onClose, user }: modalDeleteProps) {
               <i className="bi bi-x-circle" onClick={onClose}></i>
               <img src="/redflix/delete.svg" alt="Deletar conta" />
               <span>
-                Sentimos muito <strong>{user?.name}</strong>, deseja realmente
-                excluir sua conta?
+                Sentimos muito que queira ir embora{" "}
+                <strong>{user?.name}</strong>. Tem certeza que deseja excluir
+                sua conta?
               </span>
               <div className="button-container">
                 <button onClick={deleteAccount}>

@@ -19,7 +19,7 @@ function MenuDesktop({
     <>
       <div className="left-container">
         <Link
-          to="/redflix/filmes"
+          to="/filmes"
           aria-label="RedFlix é uma plataforma pra encontrar o que assistir!"
         >
           <img src="/redflix/logo.png" alt="Redflix" />
@@ -27,7 +27,7 @@ function MenuDesktop({
         <div className="action-container">
           <Link
             aria-label="Ir para lista de filmes"
-            to="/redflix/filmes"
+            to="/filmes"
             onClick={() => {
               setSearched?.("");
               setShowCategory?.(false);
@@ -37,7 +37,7 @@ function MenuDesktop({
           </Link>
           <Link
             aria-label="Ir para minha lista de filmes"
-            to="/redflix/filmes/minha-lista"
+            to="/filmes/minha-lista"
             onClick={() => {
               setShowCategory?.(false);
             }}
@@ -74,7 +74,7 @@ function MenuDesktop({
                       key={genres.id}
                       onClick={() => {
                         setSelectedGenre?.(genres.id);
-                        navigate?.("/redflix/filmes#lista");
+                        navigate?.("/filmes#lista");
                         setSearched?.("");
                         setShowCategory?.(false);
                       }}
@@ -117,7 +117,7 @@ function MenuDesktop({
                 setSelectedGenre?.(null);
                 setSearching?.(false);
                 setShowCategory?.(false);
-                navigate?.("/redflix/filmes#lista");
+                navigate?.("/filmes#lista");
               }
             }
           }}
@@ -135,7 +135,7 @@ function MenuDesktop({
         <button>
           <Link
             aria-label="Ir para configurações"
-            to={"/redflix/configuracoes"}
+            to={"/configuracoes"}
             onClick={() => {
               setShowCategory?.(false);
             }}

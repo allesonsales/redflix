@@ -15,14 +15,14 @@ import PublicRoute from "./PublicRoute";
 
 function RedRoutes() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/redflix">
       <ErrorBoundary>
         <GlobalProvider>
           <AuthProvider>
             <Header />
             <Routes>
               <Route
-                path="/redflix"
+                path="/"
                 element={
                   <PublicRoute>
                     <Login />
@@ -30,7 +30,7 @@ function RedRoutes() {
                 }
               />
               <Route
-                path="/redflix/registre-se"
+                path="/registre-se"
                 element={
                   <PublicRoute>
                     <Register />
@@ -38,7 +38,7 @@ function RedRoutes() {
                 }
               />
               <Route
-                path="/redflix/recuperar"
+                path="/recuperar"
                 element={
                   <PublicRoute>
                     <RecoverPassword />
@@ -46,7 +46,7 @@ function RedRoutes() {
                 }
               />
               <Route
-                path="/redflix/configuracoes"
+                path="/configuracoes"
                 element={
                   <PrivateRoute>
                     <Config />
@@ -54,7 +54,7 @@ function RedRoutes() {
                 }
               />
               <Route
-                path="/redflix/filmes"
+                path="/filmes"
                 element={
                   <PrivateRoute>
                     <MovieList />
@@ -62,7 +62,7 @@ function RedRoutes() {
                 }
               />
               <Route
-                path="/redflix/filmes/:id"
+                path="/filmes/:id"
                 element={
                   <PrivateRoute>
                     <MoviePage />
@@ -70,7 +70,7 @@ function RedRoutes() {
                 }
               />
               <Route
-                path="/redflix/filmes/minha-lista"
+                path="/filmes/minha-lista"
                 element={
                   <PrivateRoute>
                     <MyMovieList />

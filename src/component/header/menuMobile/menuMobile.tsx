@@ -21,7 +21,7 @@ function MenuMobile({
     <>
       <div className="mobile">
         <div className="left-container">
-          <Link to="/redflix/filmes">
+          <Link to="/filmes">
             <img src="/redflix/logo.png" alt="Redflix" />
           </Link>
         </div>
@@ -37,7 +37,7 @@ function MenuMobile({
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 e.preventDefault();
-                navigate?.("/redflix/filmes#lista");
+                navigate?.("/filmes#lista");
                 setMenuOpen(false);
               }
             }}
@@ -79,7 +79,7 @@ function MenuMobile({
                   <li>
                     <Link
                       aria-label="Ir para área de filmes!"
-                      to="/redflix/filmes"
+                      to="/filmes"
                       onClick={() => {
                         setSearched?.("");
                         setMenuOpen(false);
@@ -91,7 +91,7 @@ function MenuMobile({
                   <li>
                     <Link
                       aria-label="Ir para minha lista de filmes"
-                      to="/redflix/filmes/minha-lista"
+                      to="/filmes/minha-lista"
                       onClick={() => {
                         setMenuOpen(false);
                       }}
@@ -126,7 +126,7 @@ function MenuMobile({
                                 key={genres.id}
                                 onClick={() => {
                                   setSelectedGenre?.(genres.id);
-                                  navigate?.("/redflix/filmes#lista");
+                                  navigate?.("/filmes#lista");
                                   setSearched?.("");
                                   setShowCategory?.(false);
                                   setMenuOpen(false);
@@ -145,7 +145,7 @@ function MenuMobile({
                   <button>
                     <Link
                       aria-label="Ir para configurações"
-                      to={"/redflix/configuracoes"}
+                      to={"/configuracoes"}
                       onClick={() => setMenuOpen(false)}
                     >
                       <i className="bi bi-gear-fill"></i>

@@ -81,10 +81,10 @@ function Login() {
           </div>
           <input type="submit" value="Entrar" />
         </form>
-        <Link to="/redflix/registre-se">
+        <Link to="/registre-se">
           <button className="create">Criar conta</button>
         </Link>
-        <Link to="/redflix/recuperar" className="recuperar-senha">
+        <Link to="/recuperar" className="recuperar-senha">
           Esqueceu sua senha?
         </Link>
       </div>
@@ -94,7 +94,7 @@ function Login() {
         onClose={() => {
           setIsOpen(false);
           if (auth.user) {
-            navigate("/redflix/filmes");
+            navigate("/filmes");
           }
         }}
       />

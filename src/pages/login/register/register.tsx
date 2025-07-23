@@ -59,7 +59,7 @@ function Register() {
       if (res.ok) {
         localStorage.setItem("token", data.token);
         login(data.token, data.user);
-        navigate("/redflix/filmes");
+        navigate("/filmes");
       } else {
         setModalMessage(data.message);
         setIsOpen(true);
