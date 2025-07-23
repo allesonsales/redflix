@@ -11,6 +11,7 @@ import MoviePage from "./component/Movie/Movie";
 import MyMovieList from "./component/MyMovieList/MyMovieList";
 import Config from "./pages/login/configs/config";
 import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
 
 function RedRoutes() {
   return (
@@ -20,9 +21,30 @@ function RedRoutes() {
           <AuthProvider>
             <Header />
             <Routes>
-              <Route path="/redflix" element={<Login />} />
-              <Route path="/redflix/registre-se" element={<Register />} />
-              <Route path="/redflix/recuperar" element={<RecoverPassword />} />
+              <Route
+                path="/redflix"
+                element={
+                  <PublicRoute>
+                    <Login />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="/redflix/registre-se"
+                element={
+                  <PublicRoute>
+                    <Register />
+                  </PublicRoute>
+                }
+              />
+              <Route
+                path="/redflix/recuperar"
+                element={
+                  <PublicRoute>
+                    <RecoverPassword />
+                  </PublicRoute>
+                }
+              />
               <Route
                 path="/redflix/configuracoes"
                 element={
