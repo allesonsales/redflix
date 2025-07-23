@@ -21,14 +21,12 @@ function CommentSection({ movie, genresNames }: CommentSectionProps) {
 
   const fetchComments = async () => {
     try {
-      const res = await fetch(`${endereco}/comment/get`, {
-        method: "POST",
+      const res = await fetch(`${endereco}/comment/get?movieId=${movie.id}`, {
+        method: "GET",
         cache: "no-store",
         headers: {
-          "Content-type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ movieId: movie.id }),
       });
 
       const data = await res.json();
@@ -41,6 +39,7 @@ function CommentSection({ movie, genresNames }: CommentSectionProps) {
       }
     } catch (error) {
       setModalMessage("erro" + error);
+      setIsOpen(true);
     }
   };
 
@@ -201,8 +200,8 @@ function CommentSection({ movie, genresNames }: CommentSectionProps) {
               <figcaption>"{comment}"</figcaption>
               <div className="actions">
                 <div className="user">
-                  {user?.photo ? (
-                    <img src={user?.photo} alt={user.name} />
+                  {User?.photo ? (
+                    <img src={User?.photo} alt={User?.username} />
                   ) : (
                     <i className="bi bi-person-circle"></i>
                   )}

@@ -116,11 +116,11 @@ blockquote .user {
   gap: 1rem;
   position: absolute;
   top: 1rem;
-  left: 1rem;
 }
 
 blockquote .user img {
-  width: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: solid 3px #fff;
 }
@@ -128,6 +128,7 @@ blockquote .user img {
 blockquote .user small {
   font-weight: 600;
   color: var(--vermelho);
+  font-size: 1.2rem;
 }
 
 blockquote .user i {
@@ -138,7 +139,7 @@ blockquote figcaption {
   font-size: 1rem;
   text-align: center;
   font-weight: 400;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 blockquote .likes {
@@ -171,7 +172,8 @@ blockquote .likes p {
   }
 
   blockquote .user img {
-    width: 50px;
+    width: 60px;
+    height: 60px;
   }
 
   .comments-container .actions {
