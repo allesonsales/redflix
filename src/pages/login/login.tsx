@@ -27,7 +27,10 @@ function Login() {
       const res = await fetch(`${endereco}/auth/login`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({
+          email: email == "" ? "allesonsales@gmail.com" : email,
+          password: password == "" ? "123456" : password,
+        }),
       });
 
       const data = await res.json();
